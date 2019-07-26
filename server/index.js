@@ -21,6 +21,7 @@ massive({
 
     //USERS ENDPOINTS
     app.post('/api/users', users.create);
+    app.post('/api/login', users.login);
     app.get('/api/users', users.list);
     app.get('/api/users/:id', users.findById)
     app.get('/api/users/:id/profile', users.viewProfile)
@@ -35,7 +36,7 @@ massive({
     app.post('/api/comments', comments.create)
     app.patch('/api/comments/:id', comments.updateComment)
 
-    const PORT = 3001;
+    const PORT = 3002;
     app.listen(PORT, () => {
         console.log(`Server listening on port ${PORT}`);
     });
